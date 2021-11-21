@@ -40,7 +40,8 @@ public class BookService {
         List <Book> bookList = new ArrayList<>();
         List<Author> authorList = authorRepo.findByFirstNameIgnoreCaseAndLastNameIgnoreCase(firstName,lastName);
         // Find author by first and last name
-        if (!authorList.isEmpty()) //if we find a match
+        // List<Author> authorList = authorRepo.findByLastNameIgnoreCase(lastName);
+        if (!authorList.isEmpty())
         {
             Author author = authorList.get(0); //return the one author
             bookList = author.getBooks(); //get the books for that author     
