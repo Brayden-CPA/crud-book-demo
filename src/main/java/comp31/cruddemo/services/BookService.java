@@ -16,7 +16,7 @@ public class BookService {
     
     BookRepo bookRepo;
     AuthorRepo authorRepo;
-    
+    //both repos available to the service
     @Autowired
     public BookService (BookRepo bookRepo, AuthorRepo authorRepo) {
         super();
@@ -38,11 +38,12 @@ public class BookService {
     public Iterable<Book> findBooksByAuthor(String firstName, String lastName)
     {        
         List <Book> bookList = new ArrayList<>();
-        List<Author> authorList = authorRepo.findByFirstNameAndLastName(firstName,lastName);
-        if (!authorList.isEmpty())
+        List<Author> authorList = authorRepo.findByFirstNameIgnoreCaseAndLastNameIgnoreCase(firstName,lastName);
+        // Find author by first and last name
+        if (!authorList.isEmpty()) //if we find a match
         {
-            Author author = authorList.get(0);
-            bookList = author.getBooks();            
+            Author author = authorList.get(0); //return the one author
+            bookList = author.getBooks(); //get the books for that author     
         }
         return bookList;
     }

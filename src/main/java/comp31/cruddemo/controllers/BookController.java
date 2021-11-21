@@ -24,7 +24,8 @@ public class BookController {
 
     Logger logger = LoggerFactory.getLogger(BookController.class);
     
-    @GetMapping("/")
+    @GetMapping("/")  //Root mapping returns to the index file
+    
     public String getIndex()
     {
             return "index";

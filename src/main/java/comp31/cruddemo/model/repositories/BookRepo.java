@@ -11,4 +11,5 @@ import comp31.cruddemo.model.entities.Book;
 @Repository
 public interface BookRepo extends CrudRepository<Book,Long>{
     List<Book> findByAuthor(Author author);
+    // give you a list of of books by that author
 }
