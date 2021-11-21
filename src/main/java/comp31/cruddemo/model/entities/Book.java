@@ -29,6 +29,9 @@ public class Book {
     @Column(name="BOOK_YEAR")
     private String year;
 
+    @Column(name="BOOK_PRICE")
+    private double price;
+
     @ManyToOne 
     @JoinColumn(name = "AUTHOR_ID", nullable = true)
     private Author author;
