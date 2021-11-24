@@ -21,7 +21,7 @@
     <div th:insert="fragments/frags :: navbar" class="navbar">
     </div>
 
-    <form action="/books" class="center">
+    <!-- <form action="/books" class="center">
         <label for="firstName">Author First Name</label>
         <input type="text" name="firstName", id="firstName">
         <br>
@@ -29,47 +29,47 @@
         <input type="text" name="lastName", id="lastName">
         <br>
         <input type="submit" value="Send">
-    </form>
+    </form> -->
 
     <!-- Query 1 -->
     <form action="/authorByLetter" class="center">
-        <label>Get Authors starting with a letter</label>
+        <label>Get Authors who have a last name starting with the letter :</label><br><br>
         <input type="text" name="word1" id="word1" maxlength="1">
         <input type="submit" value="Send">
     </form>
     <!-- Query 2 -->
     <form action="/authorBySequence" class="center">
-        <label>Get Authors starting with a sequence of letters</label>
+        <label>Get Authors whose last name start with a sequence of letters</label><br><br>
         <input type="text" name="word1" id="word1">
         <input type="submit" value="Send">
     </form>
     <!-- Query 3 -->
     <form action="/booksByPrice" class="center">
-        <label>Sort Books By Price</label>
+        <label>Sort Books By Price</label><br><br>
         <input type="submit" value="Send">
     </form>
     <!-- Query 4 -->
     <form action="/booksContainingWords" class="center">
-        <label>Get books with titles containing 2 words</label>
-        <label>First Word</label>
-        <input type="text" name="word1" id="word1">
-        <label>Second Word</label>
-        <input type="text" name="word2" id="word2">
+        <label>Get books with titles containing 2 words</label><br><br>
+        <label>First Word</label><br>
+        <input type="text" name="word1" id="word1"><br>
+        <label>Second Word</label><br>
+        <input type="text" name="word2" id="word2"><br>
         <input type="submit" value="Send">
     </form>
     <!-- Query 5 -->
     <form action="/booksNotIncluding" class="center">
-        <label for="word1">Books without this word</label>
+        <label for="word1">Books without this word</label><br><br>
         <input type="text" name="word1", id="word1">
         <input type="submit" value="Send">
     </form>
     <!-- Query 6 -->
     <form action="/booksWithAndWithout" class="center">
-        <label>Get books with titles containing one word but not the second</label>
-        <label>First Word - Including</label>
-        <input type="text" name="word1" id="word1">
-        <label>Second Word - Not Including</label>
-        <input type="text" name="word2" id="word2">
+        <label>Get books with titles containing one word but not the second</label><br><br>
+        <label>First Word - Including</label><br>
+        <input type="text" name="word1" id="word1"><br>
+        <label>Second Word - Not Including</label><br>
+        <input type="text" name="word2" id="word2"><br>
         <input type="submit" value="Send">
     </form>
 
