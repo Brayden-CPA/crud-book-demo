@@ -21,7 +21,7 @@ INSERT INTO AUTHOR(AUTHOR_ID, FIRST_NAME, LAST_NAME)
     (     NULL, 'Antonio','Leiva'),
     (     NULL, 'Stephen','Samuel');
 
-INSERT INTO BOOK (BOOK_ID, BOOK_TITLE, BOOK_YEAR, AUTHOR_ID)
+INSERT INTO BOOK (BOOK_ID, BOOK_TITLE, BOOK_YEAR, BOOK_PRICE, AUTHOR_ID)
 VALUES 
     (NULL, 'Spring Boot in Action', 2018, 42.45, (SELECT Author_ID from author where last_name = 'Wells')),
     (NULL, 'Core Java for the Impatient', 2018, 52.33, (SELECT Author_ID from author where last_name = 'Horstmann')),
@@ -40,7 +40,7 @@ VALUES
     (NULL, 'Head First Python', 2010, 50.12 , (SELECT Author_ID from author where last_name = 'Barry')),
     (NULL, 'Programming Python', 1996,67.99 , (SELECT Author_ID from author where last_name = 'Luiz')),
     (NULL, 'JavaScript: The Good Parts', 2008, 21.59, (SELECT Author_ID from author where last_name = 'Crockford')),
-    (NULL, "You Don't Know JS:Scope & Closures", 2014,32.95 , (SELECT Author_ID from author where last_name = 'Simpson')),
+    (NULL, 'You Dont Know JS:Scope & Closures', 2014,32.95 , (SELECT Author_ID from author where last_name = 'Simpson')),
     (NULL, 'Secrets of the JavaScript Ninja', 2008, 41.99, (SELECT Author_ID from author where last_name = 'Bibeault')),
     (NULL, 'Kotlin in Action', 2017, 41.99, (SELECT Author_ID from author where last_name = 'Isakova')),
     (NULL, 'Kotlin for Android Developers', 2016, 43.66, (SELECT Author_ID from author where last_name = 'Leiva')),

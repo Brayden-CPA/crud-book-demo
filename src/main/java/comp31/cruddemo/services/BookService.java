@@ -48,5 +48,43 @@ public class BookService {
         }
         return bookList;
     }
+    // Query 1
+    public Iterable<Author> findAuthorsStartingWith(String keyword)
+    {
+        List<Author> authorList = authorRepo.findByLastNameStartingWithIgnoreCase(keyword);
+        return authorList;
+    }
+    // Query 3
+    public Iterable<Book> getBooksByPriceAsc()
+    {
+        List<Book> bookList = bookRepo.findAllByOrderByPriceAsc();
+        return bookList;
+    }
+    //Query 4
+    public Iterable<Book> findBooksContainingTwoIterable(String word1, String word2)
+    {
+        List<Book> bookList = bookRepo.findByTitleContainingIgnoreCaseAndTitleContainingIgnoreCase(word1, word2);
+        return bookList;
+    }
+    // Query 5
+    public Iterable<Book> findBookNotContaining(String word1)
+    {
+        List<Book> bookList = bookRepo.findByTitleNotContaining(word1);
+        return bookList;
+    }
+    // Query 6
+    public Iterable<Book> findBookContainingAndNotContaining(String word1, String word2)
+    {
+        List<Book> bookList = bookRepo.findByTitleContainingAndTitleNotContaining(word1, word2);
+        return bookList;
+    }
+
+    // public Object test()
+    // {
+    //     List<Book> bookList = bookRepo.findByTitleContainingIgnoreCaseAndTitleContainingIgnoreCase("Spring", "Boot");
+    //     return bookList;
+    // }
+    
+
 
 }

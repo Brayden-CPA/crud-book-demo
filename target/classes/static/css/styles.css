@@ -9,14 +9,22 @@ a{
 
 form.center
 {
+    float: left;
     border:solid black;
     padding: 20px;
-    width:30%;
+    width:10%;
+    /* padding-right: 5px; */
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
+    height: 12em;
 }
-
+form.center label,input{
+    justify-content: center;
+}
+table{
+    clear: both;
+}
 div.navbar
 {
     padding: 20px;

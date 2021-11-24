@@ -58,4 +58,54 @@ public class BookController {
         return "authors";
     }
 
+    // Query 1 GetMapping 
+    @GetMapping("/authorByLetter")
+    public String getAuthors( @RequestParam(required=false) String word1,Model model)
+    {
+        model.addAttribute("authors", bookService.findAuthorsStartingWith(word1));
+        return "authors";
+    }
+
+    //Query 2 GetMapping
+    @GetMapping("/authorBySequence")
+    public String getAuthorsSequence(@RequestParam(required=false) String word1,Model model)
+    {
+        model.addAttribute("authors", bookService.findAuthorsStartingWith(word1));
+        return "authors";
+    }
+    // Query 3 GetMapping 
+    @GetMapping("/booksByPrice")
+    public String getBooksByPrice(Model model)
+    {
+        model.addAttribute("books", bookService.getBooksByPriceAsc());
+        return "books";
+    }
+
+    // Query 4 GetMapping
+    @GetMapping("/booksContainingWords")
+    public String retrieveBooks( @RequestParam(required=false) String word1,
+                            @RequestParam(required=false) String word2,
+                            Model model)
+    {
+        model.addAttribute("books", bookService.findBooksContainingTwoIterable(word1,word2));
+        return "books";
+    }
+    // Query 5 GetMapping 
+    @GetMapping("/booksNotIncluding")
+    public String findBooks( @RequestParam(required=false) String word1, Model model)
+    {
+        model.addAttribute("books", bookService.findBookNotContaining(word1));
+        return "books";
+    }
+
+    // Query 6 GetMapping
+    @GetMapping("/booksWithAndWithout")
+    public String findBooks( @RequestParam(required=false) String word1,
+                            @RequestParam(required=false) String word2,
+                            Model model)
+    {
+        model.addAttribute("books", bookService.findBookContainingAndNotContaining(word1,word2));
+        return "books";
+    }
+
 }
